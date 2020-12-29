@@ -1,0 +1,13 @@
+const int led=13; //assgin pin number to a variable
+void setup()
+{
+pinMode(led,OUTPUT); //declare the pin as output
+Serial.begin(9600); //set the baud rate
+}
+void loop()
+{
+digitalWrite(led,HIGH);  //on the led
+delay(3000); //led blinks for 3 seconds
+digitalWrite(led,LOW); //led gets off
+delay(3000);  
+}
