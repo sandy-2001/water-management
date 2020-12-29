@@ -1,0 +1,20 @@
+long time; //variable to store time claculated by the sensor
+int distance; //variable to store the distance calculated using formula
+const int trig=9; //output pin
+const int echo=10; //input pin
+void setup(){
+pinMode(trig,OUTPUT); 
+pinMode(echo, INPUT);
+Serial.begin(9600);
+}
+void loop()
+{
+digitalWrite(trig,LOW);
+delay(2000);
+digitalWrite(trig,HIGH);
+delay(5000);
+time=pulseIn(echo,HIGH);
+distance=(time*0.34)/2;
+Serial.print(distance);
+delay(3000);
+}
